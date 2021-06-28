@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, {  } from 'react';
+import ItemList from './components/Items/ItemList';
 import NavBar from './components/NavBar/NavBar'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-            <NavBar />
-      </div>
-    );
-  }
-} export default App;
+
+
+export default function App () {
+  return ( 
+    <div>
+    <NavBar />
+    <ItemList />
+  </div>
+  )
+};
 
