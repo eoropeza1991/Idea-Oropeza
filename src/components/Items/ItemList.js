@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
-import {} from 'react-bootstrap'
+import React, { } from 'react'
 import Item from './Item'
 
 
-class ItemList extends Component {
-	render() {
-		return (
+function ItemList ({items}) {
 
-<tr>
-    <Item />
-</tr>
+const itemsLists = items.map(item => <Item key={item.id} item={item} />)
 
-)
+	return (
+		<div>
+			{itemsLists}
+		</div>
+	)
 }
-}
-export default ItemList;
+
+export default ItemList
+
+
 
