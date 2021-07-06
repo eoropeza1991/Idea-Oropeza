@@ -1,5 +1,5 @@
 import React, {useState } from 'react'
-import {Card, Button} from 'react-bootstrap'
+import { Button, ButtonGroup, ButtonToolbar, InputGroup, FormControl} from 'react-bootstrap'
 
 
 function ItemCount () {
@@ -15,9 +15,23 @@ const handleDecrement = () => {
 
 return (
 <div>
-<Card.Text>{numero}</Card.Text>
-<Button variant="dark" onClick={handleIncrement}>+</Button>
-<Button variant="dark" onClick={handleDecrement}>-</Button>
+
+<ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
+<InputGroup>
+    <FormControl
+      placeholder={numero}
+      aria-label="Recipient's username"
+      aria-describedby="basic-addon2"
+    />
+    <InputGroup.Append>
+    <Button variant="dark" onClick={handleIncrement}>+</Button>
+    <Button variant="dark" onClick={handleDecrement}>-</Button>
+    </InputGroup.Append>
+  </InputGroup>
+    <ButtonGroup>
+    </ButtonGroup>
+  </ButtonToolbar>
+
 </div>
 )
 

@@ -10,13 +10,12 @@ const itemsLists = items.map(item => <Item key={item.id} { ... item} />)
 
 	return (
 		<CardDeck>
-			{itemsLists}
+            {itemsLists}
 		</CardDeck>
 	)
 }
 
 export default ItemList
-
 
 
 
