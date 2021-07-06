@@ -1,4 +1,5 @@
 import React, { } from 'react';
+import ItemCount from './ItemCount';
 import { Card, ListGroup, ListGroupItem , Button} from 'react-bootstrap';
 
 const Item = ({item, key}) => { 
@@ -19,6 +20,7 @@ return (
         <ListGroupItem > {item.price}</ListGroupItem>
       </ListGroup>
       <Card.Body>
+      <ItemCount />
       <Button variant="primary">Comprar</Button>
       </Card.Body>
     </Card>
