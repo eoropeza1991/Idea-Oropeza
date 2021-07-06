@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container, Row, Col, ListGroup, Image, Button } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({id, title, price, place, url, description, ubication}) => {
+const ItemDetail = ({id, title, price, place, url, description, ubication, type, category}) => {
     return (
             <Container>
             <Row>
@@ -16,6 +17,9 @@ const ItemDetail = ({id, title, price, place, url, description, ubication}) => {
                <ListGroup.Item><h5>{description}</h5></ListGroup.Item>
                <ListGroup.Item>{place}</ListGroup.Item>
                <ListGroup.Item>{ubication}</ListGroup.Item>
+               <ListGroup.Item>
+                    Tipo de Negocio: <Link to={`/category/${category}`} >{type} </Link>               
+               </ListGroup.Item>
                <ListGroup.Item>
                <Container>
                    <Row>

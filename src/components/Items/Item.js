@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import ItemCount from './ItemCount';
 
 
-const Item = ({id, title, url, place, price}) => { 
+const Item = ({id, title, url, place, price, type, category}) => { 
 
 return (
        <Card>
@@ -21,6 +21,9 @@ return (
       <ListGroup className="list-group-flush">
         <ListGroupItem > {place}</ListGroupItem>
         <ListGroupItem > {price}</ListGroupItem>
+        <ListGroup.Item>
+                    Tipo de Negocio: <Link to={`/category/${category}`} >{type} </Link>               
+        </ListGroup.Item>
       </ListGroup>
       <Card.Body>
       <Container>
