@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartWidget from './CartWidget';
+import {Link} from 'react-router-dom'
 import {Navbar,Nav,NavDropdown,Form} from 'react-bootstrap'
 
 class NavBar extends Component {
@@ -21,7 +22,9 @@ class NavBar extends Component {
       </NavDropdown>
     </Nav>
     <Form inline>
+      <Link to="/cart">
       <CartWidget />
+      </Link>
     </Form>
   </Navbar.Collapse>
 </Navbar>

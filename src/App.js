@@ -4,6 +4,7 @@ import ItemListContainer from './components/Items/ItemListContainer';
 import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './components/Items/ItemDetailContainer'
 import { CartProvider } from './context/CartContext';
+import Cart from './components/Items/Cart'
 
 export default function App () {
   return (
@@ -19,6 +20,9 @@ export default function App () {
     </Route>
     <Route path="/item/:id">
       <ItemDetailContainer />
+    </Route>
+    <Route path="/cart">
+      <Cart />
     </Route>
     <Route path="*">
       <h1>404</h1>

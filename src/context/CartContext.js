@@ -10,7 +10,7 @@ export const CartProvider = (props) => {
 
 const clearCart = () => setCart([]);
 
-const isInCart = id => (item => item.id === id);
+const isInCart = id => cart.some(item => item.id === id);
 
 const addToCart = (item, quantity) => {
     if(isInCart(item.id)){
@@ -24,8 +24,6 @@ const addToCart = (item, quantity) => {
       setCart(prev => [...prev, { ...item, quantity}]);
     }
 };
-
-
 
 
     return <CartContext.Provider value={{cart, setCart, clearCart, addToCart}}>
