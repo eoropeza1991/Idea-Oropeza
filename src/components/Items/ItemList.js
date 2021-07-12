@@ -6,7 +6,7 @@ import Item from './Item'
 
 function ItemList ({items}) {
 
-const itemsLists = items.map(item => <Item key={item.id} { ... item} />)
+const itemsLists = items.map(item => <Item key={item.id} product={item} />)
 
 	return (
 		<CardDeck>

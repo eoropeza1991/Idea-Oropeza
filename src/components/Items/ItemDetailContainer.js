@@ -22,7 +22,7 @@ if (loading) return <Spinner animation="grow" />
 
     return (
         <div>
-            <ItemDetail {... item} /> 
+            <ItemDetail product={item} /> 
         </div>
     )
 }

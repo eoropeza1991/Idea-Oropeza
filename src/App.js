@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ItemListContainer from './components/Items/ItemListContainer';
 import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './components/Items/ItemDetailContainer'
+import { CartProvider } from './context/CartContext';
 
 export default function App () {
   return (
+    <CartProvider>
     <BrowserRouter>
     <NavBar />
     <Switch>
@@ -23,6 +25,7 @@ export default function App () {
     </Route>
     </Switch>
   </BrowserRouter>
+  </CartProvider>
   );
  }
 

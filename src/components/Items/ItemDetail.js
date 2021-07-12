@@ -1,36 +1,32 @@
 import React from 'react'
-import { Container, Row, Col, ListGroup, Image, Button } from 'react-bootstrap'
+import { Container, Row, Col, ListGroup, Image } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import { useCartContext } from '../../context/CartContext'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({id, title, price, place, url, description, ubication, type, category}) => {
+const ItemDetail = ({product}) => {
+     const {addToCart} = useCartContext();
+
+     const onAdd = qty => addToCart(product, qty);
+
     return (
             <Container>
             <Row>
                <Col>
-               <Image src={url} rounded />
+               <Image src={product.url} rounded />
                </Col>
                <Col>
                <ListGroup variant="flush">
-               <ListGroup.Item><h1>{title}</h1></ListGroup.Item>
-               <ListGroup.Item><h2>{price}</h2></ListGroup.Item>
-               <ListGroup.Item><h5>{description}</h5></ListGroup.Item>
-               <ListGroup.Item>{place}</ListGroup.Item>
-               <ListGroup.Item>{ubication}</ListGroup.Item>
+               <ListGroup.Item><h1>{product.title}</h1></ListGroup.Item>
+               <ListGroup.Item><h2>${product.price}</h2></ListGroup.Item>
+               <ListGroup.Item><h5>{product.description}</h5></ListGroup.Item>
+               <ListGroup.Item>{product.place}</ListGroup.Item>
+               <ListGroup.Item>{product.ubication}</ListGroup.Item>
                <ListGroup.Item>
-                    Tipo de Negocio: <Link to={`/category/${category}`} >{type} </Link>               
+                    Tipo de Negocio: <Link to={`/category/${product.category}`} >{product.type} </Link>               
                </ListGroup.Item>
                <ListGroup.Item>
-               <Container>
-                   <Row>
-                   <Col> 
-                        <ItemCount />
-                   </Col>
-                   <Col>
-                        <Button variant="dark">Comprar</Button>
-                   </Col>
-                   </Row>
-                </Container> 
+                      {product.stock > 0 && <ItemCount onAdd={onAdd} stock={product.stock}/>}
                </ListGroup.Item>
                </ListGroup>
                </Col>
