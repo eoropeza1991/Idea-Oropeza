@@ -1,5 +1,5 @@
 import React, {useState } from 'react'
-import { Button, ButtonGroup, ButtonToolbar, InputGroup, FormControl} from 'react-bootstrap'
+import { Button, ButtonGroup, InputGroup, FormControl} from 'react-bootstrap'
 
 
 const ItemCount = ({stock, onAdd}) => {
@@ -7,7 +7,7 @@ const ItemCount = ({stock, onAdd}) => {
 return (
 <div>
 
-<ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
+
 <InputGroup>
     <FormControl
       placeholder={toAdd}
@@ -15,14 +15,14 @@ return (
       aria-describedby="basic-addon2"
     />
     <InputGroup.Append>
-    <Button variant="dark" onClick={() => setToAdd(toAdd - 1 ? toAdd - 1 : toAdd)}>-</Button>
-    <Button variant="dark" onClick={() => setToAdd(toAdd === stock ? toAdd : toAdd + 1)}>+</Button>
+    <ButtonGroup>
+    <Button variant="outline-dark" onClick={() => setToAdd(toAdd - 1 ? toAdd - 1 : toAdd)}>-</Button>
+    <Button variant="outline-dark" onClick={() => setToAdd(toAdd === stock ? toAdd : toAdd + 1)}>+</Button>
     <Button variant="dark" onClick={() => onAdd(toAdd)}>Añadir al carrito</Button>
+    </ButtonGroup>
     </InputGroup.Append>
   </InputGroup>
-    <ButtonGroup>
-    </ButtonGroup>
-  </ButtonToolbar>
+
 
 </div>
 )

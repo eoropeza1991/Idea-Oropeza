@@ -5,8 +5,8 @@ import { useCartContext } from '../../context/CartContext'
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({product}) => {
-     const {addToCart} = useCartContext();
-
+     const {addToCart, realStock} = useCartContext();
+     const stock = realStock(product);
      const onAdd = qty => addToCart(product, qty);
 
     return (
@@ -26,7 +26,7 @@ const ItemDetail = ({product}) => {
                     Tipo de Negocio: <Link to={`/category/${product.category}`} >{product.type} </Link>               
                </ListGroup.Item>
                <ListGroup.Item>
-                      {product.stock > 0 && <ItemCount onAdd={onAdd} stock={product.stock}/>}
+                      {stock > 0 ? <> <ListGroup.Item>Stock: {stock}</ListGroup.Item> <ItemCount onAdd={onAdd} stock={stock}/> </> :<ListGroup.Item>Sin Stock</ListGroup.Item>}
                </ListGroup.Item>
                </ListGroup>
                </Col>

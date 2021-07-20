@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
+import React, {  } from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCartPlus} from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap';
+import { useCartContext } from '../../context/CartContext'
 
-class CartWidget extends Component {
-	render() {
+const CartWidget = () => {
+	const {productsInCart} = useCartContext();
+
 		return (
-<Button variant="dark"><FontAwesomeIcon icon={faCartPlus}/></Button>
+<Button variant="dark">  
+	<FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> {productsInCart}
+</Button>
+
+
 )
 }
-}
+
 
 export default CartWidget;

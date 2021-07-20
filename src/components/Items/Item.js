@@ -11,7 +11,7 @@ const Item = ({product}) => {
   const onAdd = qty => addToCart(product, qty);
 return (
        <Card>
-      <Card.Img variant="top" src={product.url} /> 
+      <Card.Img variant="top" src={product.url}/> 
       <Card.Body>
         <Link to={`/item/${product.id}`} >
         <Card.Title> {product.title}</Card.Title>
@@ -32,7 +32,6 @@ return (
       {product.stock > 0 && <ItemCount onAdd={onAdd} stock={product.stock}/>}
       </Card.Body>
       </Card>
-
   )
   
 }

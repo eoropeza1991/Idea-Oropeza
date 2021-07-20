@@ -11,8 +11,6 @@ class NavBar extends Component {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="#link">Quienes Somos</Nav.Link>
       <NavDropdown title="Categorias" id="basic-nav-dropdown">
         <NavDropdown.Item href="/category/boliches">Boliches</NavDropdown.Item>
         <NavDropdown.Item href="/category/bares">Bares</NavDropdown.Item>
@@ -20,6 +18,7 @@ class NavBar extends Component {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">¿Cómo Reservar?</NavDropdown.Item>
       </NavDropdown>
+      <Nav.Link href="#link">Quienes Somos</Nav.Link>
     </Nav>
     <Form inline>
       <Link to="/cart">
