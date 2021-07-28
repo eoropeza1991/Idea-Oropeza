@@ -6,7 +6,7 @@ import Item from './Item'
 
 function ItemList ({items}) {
 
-const itemsLists = items.map(item => <Col> <Item key={item.id} product={item} /> <br></br></Col>)
+const itemsLists = items.map(item => <Col> <Item key={item.id} item={item} /> <br></br></Col>)
 
 	return (
 <Row xs={1} md={3} xl={5} className="g-4">

@@ -13,5 +13,6 @@ const firebaseConfig = {
   const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();;
 
   export const itemsCollection = firebase.firestore(app).collection("parrandapp-products");
+  export const itemsCollection2 = firebase.firestore(app).collection("orders");
 
   

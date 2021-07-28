@@ -5,16 +5,16 @@ import { useCartContext } from '../../context/CartContext'
 import ItemCount from './ItemCount';
 
 
-const Item = ({product}) => { 
+const Item = ({item}) => { 
 
   const {addToCart} = useCartContext();
-  const onAdd = qty => addToCart(product, qty);
+  const onAdd = qty => addToCart(item, qty);
 return (
        <Card>
-      <Card.Img variant="top" src={product.url}/> 
+      <Card.Img variant="top" src={item.url}/> 
       <Card.Body>
-        <Link to={`/item/${product.id}`} >
-        <Card.Title> {product.title}</Card.Title>
+        <Link to={`/item/${item.id}`} >
+        <Card.Title> {item.title}</Card.Title>
         </Link>
         <Card.Text>
           Some quick example text to build on the card title and make up the bulk of
@@ -22,14 +22,14 @@ return (
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroupItem > {product.place}</ListGroupItem>
-        <ListGroupItem > {product.price}</ListGroupItem>
+        <ListGroupItem > {item.place}</ListGroupItem>
+        <ListGroupItem > {item.price}</ListGroupItem>
         <ListGroup.Item>
-                    Tipo de Negocio: <Link to={`/category/${product.category}`} >{product.type} </Link>               
+                    Tipo de Negocio: <Link to={`/category/${item.category}`} >{item.type} </Link>               
         </ListGroup.Item>
       </ListGroup>
       <Card.Body>
-      {product.stock > 0 && <ItemCount onAdd={onAdd} stock={product.stock}/>}
+      {item.stock > 0 && <ItemCount onAdd={onAdd} stock={item.stock}/>}
       </Card.Body>
       </Card>
   )

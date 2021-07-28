@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail';
 import {Spinner}  from 'react-bootstrap';
-import { itemsCollection } from '../firebase';
+import { itemsCollection } from '../firebase/index';
 
 const ItemDetailContainer = () => {
     const {id} = useParams();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { itemsCollection } from "../firebase";
+import { itemsCollection } from "../firebase/index";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {

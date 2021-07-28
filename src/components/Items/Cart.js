@@ -1,5 +1,5 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import {Card, Button, Spinner, Row, ListGroup, ListGroupItem} from 'react-bootstrap'
 import { useCartContext } from '../../context/CartContext';
 
@@ -31,10 +31,16 @@ const Cart = () => {
           <Row className="justify-content-md-center">
                  <ListGroup>
                  <ListGroupItem>
-                  <h5 font-weight= "bolder"> Total: ${cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2)}</h5> 
+                  <h5 fontWeight= "bolder"> Total: ${cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2)}</h5> 
                    </ListGroupItem>
                  <Button variant="secondary" onClick={clearCart}>Vaciar Carrito</Button>
                  </ListGroup>
+          </Row>
+          <br></br>
+          <Row className="justify-content-md-center">
+          <Link to="/order">
+          <Button variant="secondary">Comprar</Button>
+          </Link>
           </Row>
         </div>
     )
