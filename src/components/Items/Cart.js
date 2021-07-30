@@ -39,7 +39,7 @@ const Cart = () => {
           <br></br>
           <Row className="justify-content-md-center">
           <Link to="/order">
-          <Button variant="secondary">Comprar</Button>
+          <Button variant="secondary" type="submit">Comprar</Button>
           </Link>
           </Row>
         </div>

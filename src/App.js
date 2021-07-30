@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './components/Items/ItemDetailContainer'
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Items/Cart'
-import FormOrders from './components/Orders/FormOrders'
+import Order from './components/Orders/Order'
 
 export default function App () {
   return (
@@ -26,7 +26,7 @@ export default function App () {
       <Cart />
     </Route>
     <Route path="/order">
-      <FormOrders />
+      <Order />
     </Route>
     <Route path="*">
       <h1>404</h1>
