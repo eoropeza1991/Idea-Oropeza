@@ -4,15 +4,15 @@ import { itemsCollection2 } from '../firebase/index';
 
 const Order = () => {
 
-    const addNewOrders = async (purchaseOrders) => {
+
+    const addNewOrdersClient = async (purchaseOrders) => {
         await itemsCollection2.doc().set(purchaseOrders)
-        console.log('nueva orden')
-        
+        console.log('nueva orden')        
     };
 
     return (
         <div>
-            <FormOrders addNewOrders={addNewOrders} />
+            <FormOrders addNewOrdersClient={addNewOrdersClient} />
         </div>
     )
 };

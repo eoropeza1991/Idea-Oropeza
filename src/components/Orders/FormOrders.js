@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {Row, Spinner, ListGroup, ListGroupItem, Form, Col, Button, Table} from 'react-bootstrap'
 import { useCartContext } from '../../context/CartContext';
 import { TextField } from '@material-ui/core';
@@ -13,18 +13,25 @@ const FormOrders = (props) => {
         date: '',
     };
 
+    const [productItems, setValueproducts] = useState('');
+
     const [values, setValues] = useState(initialStateValues);
 
     const handleFormChange = e => {
-        const {name} = e.target;
-        const {value} = e.target;
+        const {name, value} = e.target;
         setValues({...values, [name]: value})
-        props.addNewOrders(values);
     };
 
+
     const handleSubmit = (e) => {
+        debugger;
+        setValueproducts(cart)
+        console.log(productItems)
         e.preventDefault();
+        props.addNewOrdersClient(values);
+
     };
+
 
     if(providerLoading) return <Spinner animation="grow" />;
 
