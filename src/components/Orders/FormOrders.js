@@ -11,9 +11,10 @@ const FormOrders = (props) => {
         email: '',
         phone: '',
         date: '',
+        products: [],
+        totalPrice: [],
+        
     };
-
-    const [productItems, setValueproducts] = useState('');
 
     const [values, setValues] = useState(initialStateValues);
 
@@ -24,9 +25,9 @@ const FormOrders = (props) => {
 
 
     const handleSubmit = (e) => {
-        debugger;
-        setValueproducts(cart)
-        console.log(productItems)
+        values.products = cart;
+        values.totalPrice = cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2);
+        console.log(values.products)
         e.preventDefault();
         props.addNewOrdersClient(values);
 
@@ -95,7 +96,7 @@ const FormOrders = (props) => {
         <ListGroup>
             <Col md="auto">
         <ListGroupItem>
-            <h5 fontWeight= "bolder"  > Total: ${cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2)}</h5> 
+            <h5 fontWeight= "bolder" name="totalPrice" > Total: ${cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2)}</h5> 
         </ListGroupItem>
             </Col>
             <Col md="auto">
