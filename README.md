@@ -8,7 +8,7 @@ Disfrutá de tu bebida o trago sin espera!
 
 
 **Pasos a seguir para correr local**
-* Clonar de https://github.com/RRMoreno/tupedido-RRafols
+* Clonar de https://github.com/eoropeza1991/Idea-Oropeza
 * Instalar las dependencias con `npm install` o `yarn`
 * Correr la aplicacion: `npm run start` o `yarn run start`
 
