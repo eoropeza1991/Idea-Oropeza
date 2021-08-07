@@ -17,8 +17,7 @@ return (
         <Card.Title> {item.title}</Card.Title>
         </Link>
         <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
+          Comprá tu producto aquí y presentá el ticket en el local para retirarlo. Sin filas y con descuento.
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">

@@ -7,7 +7,7 @@ class NavBar extends Component {
 	render() {
 		return (
 <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="/">ParrandApp</Navbar.Brand>
+  <Navbar.Brand href="/"><img src="https://firebasestorage.googleapis.com/v0/b/parrandapp-8a30b.appspot.com/o/logo.png?alt=media&token=d25b98ec-70d9-41fd-b57d-d8eb78f00ca0" width="150" alt="logo" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">

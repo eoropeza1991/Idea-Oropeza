@@ -1,6 +1,6 @@
 import React from 'react'
 import {Redirect, Link} from 'react-router-dom';
-import {Card, Button, Spinner, Row, ListGroup, ListGroupItem} from 'react-bootstrap'
+import {Card, Button, Spinner, Row, ListGroup, ListGroupItem, Badge} from 'react-bootstrap'
 import { useCartContext } from '../../context/CartContext';
 
 const Cart = () => {
@@ -12,35 +12,42 @@ const Cart = () => {
 
     return(
         <div>
+          <br></br>
+          <ListGroup>
           <Row className="justify-content-md-center">
             {cart.map((item) => (
                  <Card border="light" style={{ width: '25rem' }}>
-                 <Card.Header>{item.title}</Card.Header>
-                 <Card.Header>Cantidad: {item.quantity}</Card.Header>
-                 <Button variant="dark" onClick={()=>removeItem(item.id)}>Eliminar producto</Button>
-                 <Card.Body>
-                   <Card.Title>${item.price}</Card.Title>
-                   <Card.Text>
+                 <ListGroupItem><Card.Header>{item.title}</Card.Header></ListGroupItem>
+                 <ListGroupItem><Card.Header>Cantidad: {item.quantity}</Card.Header></ListGroupItem>
+                 <ListGroupItem><Button variant="dark" onClick={()=>removeItem(item.id)}>Eliminar producto</Button></ListGroupItem>
+                 <ListGroupItem>
+                   <Card.Title>
                      {item.place}
-                   </Card.Text>
-                 </Card.Body>
+                 </Card.Title>
+                 </ListGroupItem>
                  </Card>
                  ))}
           </Row>
+          </ListGroup>
           <br></br>
           <Row className="justify-content-md-center">
-                 <ListGroup>
-                 <ListGroupItem>
-                  <h5 fontWeight= "bolder"> Total: ${cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2)}</h5> 
-                   </ListGroupItem>
-                 <Button variant="secondary" onClick={clearCart}>Vaciar Carrito</Button>
-                 </ListGroup>
-          </Row>
-          <br></br>
-          <Row className="justify-content-md-center">
+          <ListGroup>
+          <ListGroup.Item>
+          <h3>
+          <Badge bg="secondary">
+            Total: ${cart.reduce((acc, {quantity, price}) => acc + quantity * price, 0).toFixed(2)}
+            </Badge>
+          </h3>
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <Button variant="dark" onClick={clearCart}>Vaciar Carrito</Button>    
+          </ListGroup.Item> 
+          <ListGroup.Item>
           <Link to="/order">
           <Button variant="secondary" type="submit">Comprar</Button>
           </Link>
+          </ListGroup.Item>
+          </ListGroup>
           </Row>
         </div>
     )

@@ -9,7 +9,7 @@ function ItemList ({items}) {
 const itemsLists = items.map(item => <Col> <Item key={item.id} item={item} /> <br></br></Col>)
 
 	return (
-<Row xs={1} md={3} xl={5} className="g-4">
+<Row xs={1} md={3} xl={5} className="g-5">
             {itemsLists}
 </Row> 
 	)
